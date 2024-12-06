@@ -13,9 +13,8 @@ def retrieve_numbers_from_input() -> Tuple[List[int], List[int]]:
     return (left_numbers, right_numbers)
 
 
-def main():
-    left_numbers, right_numbers = retrieve_numbers_from_input()
-    
+def get_total_distance(left_numbers: List[int], right_numbers: List[int]) -> int:
+
     left_numbers.sort()
     right_numbers.sort()
     
@@ -23,7 +22,14 @@ def main():
     for i in range(len(left_numbers)):
         sum += abs(left_numbers[i] - right_numbers[i])
 
-    print(sum)
+    return sum
+
+def main():
+    left_numbers, right_numbers = retrieve_numbers_from_input()
+
+    total_distance = get_total_distance(left_numbers, right_numbers)
+
+    print(total_distance)
 
 if __name__ == "__main__":
     main()
