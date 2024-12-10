@@ -1,4 +1,3 @@
-import re
 
 def retrieve_memory() -> str:
     memory = ''
